@@ -15,7 +15,8 @@
     ```
     docker build -t spartan-server:latest .
     ```
-4. Run a docker container with our custom script
+4. if work with us directly, decrypt the encrypted `credentials.yml.enc` file with the secret key we gave you, otherwise fill in the boilerplate of the credentials with your own. 
+5. Run a docker container with our custom script
     ```
     ./run.sh (to be built)
     ```
