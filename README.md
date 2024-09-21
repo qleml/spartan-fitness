@@ -18,7 +18,7 @@
 4. if work with us directly, decrypt the encrypted `credentials.yml.enc` file with the secret key we gave you, otherwise fill in the boilerplate of the credentials with your own. 
 5. Run a docker container with our custom script
     ```
-    docker run /var/lib/spartan-fitness/db:/app/db -d -p 80:80 -p 443:443 -p 7050:7050 --name spartan-fitness -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY spartan-fitness
+    docker run -v /var/lib/spartan-fitness/db:/rails/storage -d -p 80:80 -p 443:443 -p 7050:7050 --name spartan-fitness -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY spartan-fitness
 
     docker run -d -p 80:80 -p 443:443 -p 7050:7050 --name spartan-fitness -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY spartan-fitness /bin/bash
     ```
