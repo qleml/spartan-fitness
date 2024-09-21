@@ -1,0 +1,13 @@
+<div class="p-4 bg-gray-100 rounded-lg hover:shadow-lg">
+    
+  <h1 class="font-bold text-4xl">Choose your fighter</h1>
+
+    <h2 class="font-bold text-5xl text-green-400">Users</h2>
+    <ul>
+      <% @users.each do |user| %>
+      <li>
+        <%= link_to user.username, user %>
+      </li>
+      <% end %>
+    </ul>
+</div>
