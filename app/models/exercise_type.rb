@@ -1,3 +1,3 @@
 class ExerciseType < ApplicationRecord
-  has_many :exercises  # Ensure this line exists
+  has_many :exercises
 end
