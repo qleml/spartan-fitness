@@ -35,6 +35,14 @@
           <li>
             <%= link_to "Back", exercises_path, class: "text-blue-500 underline hover:text-blue-700" %>
           </li>
+          <li><%= link_to "Destroy", exercise_path(@exercise), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+
+            <li>
+            <%= button_to 'Delete', exercise_path(@exercise), method: :delete, class: "text-red-500 underline hover:text-red-700" %>
+            </li>
         </ul>
 
     </div>
