@@ -41,7 +41,7 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.find(params[:id])
     @exercise.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to exercises_path, status: :see_other
   end
 
   private

@@ -40,6 +40,9 @@
                     turbo_confirm: "Are you sure?"
                   } %></li>
 
+            <li>
+            <%= button_to 'Delete', exercise_path(@exercise), method: :delete, class: "text-red-500 underline hover:text-red-700" %>
+            </li>
         </ul>
 
     </div>
