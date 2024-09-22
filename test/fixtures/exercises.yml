@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  musclegroup: one
+  exercise_category: one
 
 two:
   name: MyString
-  musclegroup: two
+  exercise_category: two
