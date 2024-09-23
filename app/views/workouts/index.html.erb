@@ -1,0 +1,35 @@
+<div class="flex flex-col">
+    <h1 class="text-2xl font-bold mb-4">My Past Workouts</h1>
+
+    <% if current_selected_user %>
+    <div class="mb-8">
+        <% my_workouts = @workouts.select { |workout| workout.user_id == current_selected_user.id } %>
+        <% if my_workouts.any? %>
+        <% my_workouts.each do |workout| %>
+            <p class="mb-2">
+            <strong><%= workout.title %></strong> - <%= workout.created_at.strftime("%B %d, %Y %H:%M") %>
+            </p>
+        <% end %>
+        <% else %>
+        <p>You have no past workouts.</p>
+        <% end %>
+    </div>
+    <% else %>
+    <p>Please select a user to view your workouts.</p>
+    <% end %>
+
+    <h1 class="text-2xl font-bold mb-4">Workouts from Other Users</h1>
+
+    <div>
+    <% other_workouts = @workouts.reject { |workout| workout.user_id == current_selected_user&.id } %>
+    <% if other_workouts.any? %>
+        <% other_workouts.each do |workout| %>
+        <p class="mb-2">
+            <strong><%= workout.title %></strong> - <%= workout.created_at.strftime("%B %d, %Y %H:%M") %> by <%= workout.user.username %>
+        </p>
+        <% end %>
+    <% else %>
+        <p>There are no workouts from other users.</p>
+    <% end %>
+    </div>
+</div>    

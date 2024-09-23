@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  root "users#index"
+  get "pages/home"
+  root "pages#home"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :exercise_category
   resources :users
   resources :exercises
+  resources :workouts
+  get "/select_user", to: "users#select", as: "select_user"
+  post "/set_user", to: "users#set_user", as: "set_user"
+  delete "/logout", to: "users#logout", as: "logout"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
