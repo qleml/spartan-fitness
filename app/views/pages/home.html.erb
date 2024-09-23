@@ -1,0 +1,19 @@
+<div>
+  <h1 class="font-bold text-4xl">Pages#home</h1>
+  <p>Find me in app/views/pages/home.html.erb</p>
+
+  <ul class="flex space-x-4 mt-4">
+          <li>
+            <%= link_to "Exercises", exercises_path, class: "text-spartan-red-500 underline hover:text-blue-700" %>
+          </li>
+          <li>
+              <%= link_to "Users", users_path, class: "text-spartan-red-500 underline hover:text-blue-700" %>
+          </li>
+             <%= link_to "Workouts", workouts_path, class: "text-spartan-red-500 underline hover:text-blue-700" %>
+          </li>
+          </li>
+             <%= link_to "Login as user ", select_user_path, class: "text-spartan-red-500 underline hover:text-blue-700" %>
+          </li>
+  </ul>
+
+</div>
