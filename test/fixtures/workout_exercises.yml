@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exercise: one
+  workout: one
+  set_variation_type: MyString
+  set_variation_id: 1
+
+two:
+  exercise: two
+  workout: two
+  set_variation_type: MyString
+  set_variation_id: 1

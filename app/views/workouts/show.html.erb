@@ -1,0 +1,12 @@
+<div>
+    <h1 class="text-3xl font-bold text-spartan-red mb-6"><%= @workout.title %></h1>
+
+    <h2 class="text-2xl font-semibold text-spartan-red mb-4">Exercises</h2>
+    <ul class="list-disc list-inside">
+    <% @exercises.each do |exercise| %>
+        <li class="text-lg text-spartan-grey mb-2"><%= exercise.name %></li>
+    <% end %>
+    </ul>
+
+    <%= button_to 'Delete Workout', workout_path(@workout), method: :delete, class: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' %>
+<div>

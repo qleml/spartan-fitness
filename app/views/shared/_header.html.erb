@@ -1,0 +1,7 @@
+<header class="bg-spartan-grey-500 text-white p-4">
+  <% if current_selected_user %>
+    <p>Logged in as: <%= current_selected_user.username %></p>
+  <% else %>
+    <p>Not logged in</p>
+  <% end %>
+</header>

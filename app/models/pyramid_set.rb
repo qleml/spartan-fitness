@@ -1,0 +1,2 @@
+class PyramidSet < ApplicationRecord
+end
