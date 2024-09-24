@@ -5,6 +5,7 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find(params[:id])
+    @exercises = @workout.exercises
   end
 
   def new
@@ -15,10 +16,10 @@ class WorkoutsController < ApplicationController
     @workout = Workout.new(workout_params)
 
     if @workout.save
-      flash[:notice] = "Workout was successfully created."
-      redirect_to @workout
+      create_workout_exercises(@workout, params[:workout][:exercise_ids])
+      redirect_to @workout, notice: "Workout was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
@@ -30,7 +31,14 @@ class WorkoutsController < ApplicationController
   end
 
   private
-    def workout_params
-      params.require(:workout).permit(:name, :user_id)
+
+  def workout_params
+    params.require(:workout).permit(:user_id)
+  end
+
+  def create_workout_exercises(workout, exercise_ids)
+    exercise_ids.reject(&:blank?).each do |exercise_id|
+      WorkoutExercise.create(workout_id: workout.id, exercise_id: exercise_id)
     end
+  end
 end
