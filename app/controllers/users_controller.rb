@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :ensure_user_selected, only: [ :select, :set_user ]
   def index
     @users = User.all
   end
@@ -7,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    puts "Selected user ID: #{params[:user_id]}"
     session[:user_id] = params[:user_id]
     redirect_to pages_home_path
   end
