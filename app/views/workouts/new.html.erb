@@ -2,7 +2,7 @@
   <h1 class="text-3xl font-bold text-spartan-red-400 mb-6">New Workout</h1>
   <%= form_with model: @workout, local: true do |form| %>
     <div class="field mb-4">
-      <%= form.hidden_field :user_id, value: current_selected_user.id %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
     </div>
 
     <div class="field mb-4">
