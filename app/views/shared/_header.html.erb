@@ -1,7 +1,14 @@
-<header class="bg-spartan-grey-500 text-white p-4">
-  <% if current_user %>
-    <p>Logged in as: <%= current_user.username %></p>
-  <% else %>
-    <p>Not logged in</p>
-  <% end %>
+<header class="bg-spartan-grey-500 text-white p-2">
+  <div class="flex justify-between items-center w-full">
+      <%= link_to pages_home_path(current_user) do %>
+        <%= image_tag 'spartan-helmet-front-w-128.png', alt: 'Home', class: 'rounded-full w-8 h-8' %>
+      <% end %>
+      <p class="ml-2">
+        γεια <%= current_user.username %>
+      </p>
+    <div>
+      <!-- Add any content you want to align to the right here -->
+      <%= link_to 'Profile', user_path(current_user), class: '' %>
+    </div>
+  </div>
 </header>
