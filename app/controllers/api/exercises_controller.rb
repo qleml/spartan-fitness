@@ -12,7 +12,6 @@ module Api
 
     def new
       @exercise = Exercise.new
-      
     end
 
     def create
