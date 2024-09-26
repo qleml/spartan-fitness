@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :exercises
   end
   resources :workouts
+  namespace :api do
+    resources :workouts
+  end
   get "/select_user", to: "users#select", as: "select_user"
   post "/set_user", to: "users#set_user", as: "set_user"
   delete "/logout", to: "users#logout", as: "logout"

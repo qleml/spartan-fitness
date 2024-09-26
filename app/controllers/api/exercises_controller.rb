@@ -1,5 +1,5 @@
 module Api
-  class ExercisesController < ApplicationController
+  class ExercisesController < BaseController
     def index
       @exercises = Exercise.all
       render json: @exercises
@@ -7,6 +7,7 @@ module Api
 
     def show
       @exercise = Exercise.find(params[:id])
+      render json: @exercise
     end
 
     def new
