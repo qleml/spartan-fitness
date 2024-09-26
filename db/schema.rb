@@ -17,22 +17,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_23_202542) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "exercise_workouts", force: :cascade do |t|
-    t.integer "exercise_id", null: false
-    t.integer "workout_id", null: false
-    t.string "set_variation_type"
-    t.integer "set_variation_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["exercise_id"], name: "index_exercise_workouts_on_exercise_id"
-    t.index ["workout_id"], name: "index_exercise_workouts_on_workout_id"
-  end
-
   create_table "exercises", force: :cascade do |t|
     t.string "name"
+    t.integer "exercise_category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "exercise_category_id"
+    t.index ["exercise_category_id"], name: "index_exercises_on_exercise_category_id"
   end
 
   create_table "normal_sets", force: :cascade do |t|
@@ -73,8 +63,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_23_202542) do
     t.index ["user_id"], name: "index_workouts_on_user_id"
   end
 
-  add_foreign_key "exercise_workouts", "exercises"
-  add_foreign_key "exercise_workouts", "workouts"
   add_foreign_key "exercises", "exercise_categories"
   add_foreign_key "workout_exercises", "exercises"
   add_foreign_key "workout_exercises", "workouts"

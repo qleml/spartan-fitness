@@ -19,8 +19,10 @@
   </head>
 
   <body>
+    <% if current_user %>
     <%= render 'shared/header' %>
-    <main class="container mx-auto mt-24 px-3 flex">
+    <% end %>
+    <main class="container mx-auto mt-5 px-3 flex">
       <%= yield %>
     </main>
   </body>
