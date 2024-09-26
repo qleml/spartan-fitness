@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :exercise_category
   resources :users
   resources :exercises
+  namespace :api do
+    resources :exercises
+  end
   resources :workouts
   get "/select_user", to: "users#select", as: "select_user"
   post "/set_user", to: "users#set_user", as: "set_user"
