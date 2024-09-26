@@ -1,4 +1,4 @@
 class User < ApplicationRecord
   has_many :workouts
-  validates :username, presence: true, length: { maximum: 16 }
+  validates :username, presence: true, length: { maximum: 16 }, uniqueness: true
 end
