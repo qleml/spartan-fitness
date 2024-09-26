@@ -1,5 +1,5 @@
 module Api
-  class WorkoutsController < ApplicationController
+  class WorkoutsController < BaseController
     def index
       @workouts = Workout.includes(:user)
       render json: @workouts.as_json(include: { user: { only: :username } })
